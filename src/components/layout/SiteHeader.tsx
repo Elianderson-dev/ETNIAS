@@ -1,0 +1,15 @@
+import { NavLink } from 'react-router-dom'
+
+export function SiteHeader() {
+    return (
+        <header>
+            <nav aria-label="Main Navigation">
+                <NavLink to="/" end> {/*Changes only the necessary component instead of the whole page.*/} 
+                    ETNIAS
+                </NavLink>
+
+                <NavLink to="/etnias">O ETNIAS</NavLink>
+            </nav>
+        </header>
+    )
+}
