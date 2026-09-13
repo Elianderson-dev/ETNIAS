@@ -1,6 +1,6 @@
 export function EtniasPage() {
     return (
-        <section>
+        <section className="page">
             <p>Sobre o grupo</p>
             <h1>ETNIAS Capoeira</h1>
             <p>

@@ -1,0 +1,41 @@
+body {
+    min-height: 100vh;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    line-height: 1.5;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+main {
+    min-height: 60vh;
+}
+
+.page {
+    width: min(100% - 2rem, var(--content-max-width));
+    margin-inline: auto;
+    padding-block: var(--space-16);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    line-height: 1.1;
+}
+
+a {
+    color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 3px;
+}

@@ -1,6 +1,6 @@
 export function HomePage () {
     return (
-        <section>
+        <section className="page">
             <p>ETNIAS Capoeira</p>
             <h1>Uma roda de memória, movimento e ancestralidade.</h1>
             <p>
