@@ -8,7 +8,13 @@ export function SiteHeader() {
                     ETNIAS
                 </NavLink>
 
-                <NavLink to="/etnias">O ETNIAS</NavLink>
+                <NavLink to="/etnias">
+                    O ETNIAS
+                </NavLink>
+
+                <NavLink to="/personalidades">
+                    Personalidades
+                </NavLink>
             </nav>
         </header>
     )

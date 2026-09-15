@@ -1,7 +1,7 @@
 /*Types for Cultural References*/
 
 export type CulturalFigureRole = 
-    | 'master'
+    | 'mestre'
     | 'mestra'
     | 'capoeirista'
     | 'figura-historica'
