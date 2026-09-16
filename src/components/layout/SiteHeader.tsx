@@ -15,6 +15,8 @@ export function SiteHeader() {
                 <NavLink to="/personalidades">
                     Personalidades
                 </NavLink>
+
+                <NavLink to="/acervo">Acervo Cultural</NavLink>
             </nav>
         </header>
     )
