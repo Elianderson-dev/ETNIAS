@@ -18,21 +18,21 @@ interface FigureCardProps {
 export function FigureCard({ figure }: FigureCardProps) {
     return (
         <article className="figure-card">
-            <header className="figure-card__header">
-                <span className="figure-card__role">{roleLabels[figure.role]}</span>
-                <h2 className="figure-card__title">{figure.name}</h2>
+            <header className="figure-card_header">
+                <span className="figure-card_role">{roleLabels[figure.role]}</span>
+                <h2 className="figure-card_title">{figure.name}</h2>
                 {figure.knownAs && (
-                    <p className="figure-card__known-as">
+                    <p className="figure-card_known-as">
                         Conhecido(a) como: <strong>{figure.knownAs}</strong>
                     </p>
                 )}
-                <p className="figure-card__period">{figure.period}</p>
+                <p className="figure-card_period">{figure.period}</p>
             </header>
 
-            <p className="figure-card__summary">{figure.summary}</p>
+            <p className="figure-card_summary">{figure.summary}</p>
             
             {figure.contributions.length > 0 && (
-                <div className="figure-card__section">
+                <div className="figure-card_section">
                     <h3>Contribuições</h3>
                     <ul>
                         {figure.contributions.map((contribution) => (
