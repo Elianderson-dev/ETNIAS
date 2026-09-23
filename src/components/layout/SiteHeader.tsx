@@ -1,23 +1,42 @@
-import { NavLink } from 'react-router-dom'
+﻿import { NavLink } from 'react-router-dom'
 
 export function SiteHeader() {
     return (
-        <header>
-            <nav aria-label="Main Navigation">
-                <NavLink to="/" end> {/*Changes only the necessary component instead of the whole page.*/} 
+        <header className="site-header">
+            <div className="site-header_container">
+                <NavLink to="/" end className="site-header_logo">
                     ETNIAS
                 </NavLink>
 
-                <NavLink to="/etnias">
-                    O ETNIAS
-                </NavLink>
+                <nav aria-label="Navegação Principal" className="site-header_nav">
+                    <NavLink
+                        to="/etnias"
+                        className={({ isActive }) =>
+                            isActive ? 'site-header_link site-header_link--active' : 'site-header_link'
+                        }
+                    >
+                        O ETNIAS
+                    </NavLink>
 
-                <NavLink to="/personalidades">
-                    Personalidades
-                </NavLink>
+                    <NavLink
+                        to="/personalidades"
+                        className={({ isActive }) =>
+                            isActive ? 'site-header_link site-header_link--active' : 'site-header_link'
+                        }
+                    >
+                        Personalidades
+                    </NavLink>
 
-                <NavLink to="/acervo">Acervo Cultural</NavLink>
-            </nav>
+                    <NavLink
+                        to="/acervo"
+                        className={({ isActive }) =>
+                            isActive ? 'site-header_link site-header_link--active' : 'site-header_link'
+                        }
+                    >
+                        Acervo Cultural
+                    </NavLink>
+                </nav>
+            </div>
         </header>
     )
 }

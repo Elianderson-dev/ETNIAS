@@ -1,7 +1,5 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import type { ArchiveRecord } from '../types/cultural'
-
-/*Each card receives only one register*/
 
 interface ArchiveCardProps {
     record: ArchiveRecord
@@ -9,12 +7,18 @@ interface ArchiveCardProps {
 
 export function ArchiveCard({ record }: ArchiveCardProps) {
     return (
-        <article>
-            <p>{record.category}</p>
-            <h2>{record.title}</h2>
-            <p>{record.summary}</p>
+        <article className="archive-card">
+            <header className="archive-card_header">
+                <span className="archive-card_category">{record.category}</span>
+                <h2 className="archive-card_title">{record.title}</h2>
+            </header>
+            <p className="archive-card_summary">{record.summary}</p>
             
-            <Link to={`/acervo/${record.slug}`}>Ler registro</Link>
+            <footer className="archive-card_footer">
+                <Link to={'/acervo/' + record.slug} className="archive-card_link">
+                    Ler registro &rarr;
+                </Link>
+            </footer>
         </article>
     )
 }
