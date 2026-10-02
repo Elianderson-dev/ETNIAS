@@ -73,14 +73,25 @@ textarea:focus-visible {
 /* Site Header & Navigation */
 .site-header {
     background-color: var(--color-earth-dark);
-    color: var(--color-on-dark);
     box-shadow: var(--shadow-md);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: relative;
+    z-index: 1;
+}
+
+.site-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(../assets/texture_header.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .site-header_container {
+    position: relative;
     width: min(100% - 2rem, var(--content-max-width));
     margin-inline: auto;
     display: flex;
@@ -88,11 +99,14 @@ textarea:focus-visible {
     align-items: center;
     justify-content: space-between;
     padding-block: var(--space-4);
+    z-index: 1;
 }
 
 .site-header_nav {
+    display: block;
     gap: var(--space-6);
     align-items: center;
+    overflow: hidden;
 }
 
 .site-header_link {
@@ -111,15 +125,14 @@ textarea:focus-visible {
     display: inline-flex;
     align-items: center;
     font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
+    font-size: 2rem;
+    text-shadow: 1px var(--color-gold);
     letter-spacing: 2px;
 }
 
 .site-header_logo-img {
-    width: 52px;
-    height: 52px;
+    width: 70px;
+    height: 70px;
     object-fit: contain;
     flex-shrink: 0;
     transform: translateX(-12px) scale(0.85);
@@ -167,12 +180,27 @@ textarea:focus-visible {
 
 /* Site Footer */
 .site-footer {
+    position: relative;
     background-color: var(--color-earth-dark);
     color: var(--color-on-dark);
     text-align: center;
     padding-block: var(--space-8);
     margin-top: var(--space-16);
 }
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(../assets/texture_header.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
 
 .site-footer p {
     color: var(--color-on-dark);
