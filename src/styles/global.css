@@ -124,10 +124,12 @@ textarea:focus-visible {
 .site-header_logo {
     display: inline-flex;
     align-items: center;
-    font-family: var(--font-display);
-    font-size: 2rem;
-    text-shadow: 1px var(--color-gold);
-    letter-spacing: 2px;
+    font-family: var(--font-organic);
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    line-height: 1;
 }
 
 .site-header_logo-img {
@@ -137,37 +139,47 @@ textarea:focus-visible {
     flex-shrink: 0;
     transform: translateX(-12px) scale(0.85);
     transition: 
-    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .site-header_logo-text {
+    position: relative;
+    white-space: nowrap;
+    user-select: none;
+    margin-left: -4px;
+    color: var(--color-on-dark);
+
+    /* Minimalist gradient derived from ETNIAS logo identity:
+       Crisp warm ivory into warm paper tone, ochre gold, and soft earth light */
     background: linear-gradient(
         90deg,
-        var(--color-paper-warm) 0%,
-        var(--color-gold) 50%,
-        var(--color-red) 70%,
-        var(--color-earth) 100%
-
-       
+        var(--color-on-dark) 0%,
+        var(--color-paper-warm) 35%,
+        var(--color-gold) 75%,
+        var(--color-earth-light) 100%
     );
     background-size: 100%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: etnias-gradient-shift 7s linear infinite;
-    
+    /* Smooth reveal effect on hover */
     clip-path: inset(0 100% 0 0);
+    transform: translateX(-8px);
+    opacity: 0.85;
+
     transition: 
-    clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    transform: 0.7 cubic-bezier(0.22, 1, 0.36, 1);
-    color: var(--color-paper-warm);
+        clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .site-header_logo:hover .site-header_logo-text,
 .site-header_logo:focus-visible .site-header_logo-text {
     clip-path: inset(0 0 0 0);
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .site-header_link:hover {
